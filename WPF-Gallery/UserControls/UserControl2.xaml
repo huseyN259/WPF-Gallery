@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="WPF_Gallery.UserControls.UserControl2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Gallery.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="MainButtons_Grid" Background="Aquamarine">
+            <Canvas>
+                <Button Canvas.Top="10" Name="BackButton" Click="BackButton_Click" Height="40" Width="40" 
+                        Background="Transparent" BorderThickness="0" ToolTip="Back">
+                    <Image Source="/UserControls/backBtn2_64.png" Name="img" ></Image>
+                </Button>
+                <Menu Canvas.Top="10" Canvas.Right="0" Height="40" Width="50" Background="Transparent" BorderThickness="0">
+                    <Image Source="/UserControls/Menu.png"></Image>
+                    <MenuItem Height="20" Width="50" Background="Transparent" BorderThickness="0" Header="Image Path"></MenuItem>
+                </Menu>
+                <TextBlock FontSize="40" Text="PHOTOS" Canvas.Left="330">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Violet" Offset="0.5"></GradientStop>
+                            <GradientStop Color="PaleVioletRed" Offset="0.5"></GradientStop>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </Canvas>
+        </Grid>
+        <Grid Grid.Row="1" Background="Aquamarine">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid x:Name="Image_Grid">
+                <Image x:Name="MainImage" Source="{Binding Img1.Source}"></Image>
+            </Grid>
+            <Grid Grid.Row="1" x:Name="ImageButtons_Grid">
+                <Canvas>
+                    <Button Click="PrevBtn_Click" x:Name="PrevBtn" Canvas.Left="200" Width="50" Height="50" Background="Transparent" BorderThickness="0">
+                        <Image Source="/UserControls/prev_64.png"></Image>
+                    </Button>
+                    <Button  x:Name="NextBtn" Canvas.Left="500" Width="50" Height="50" Background="Transparent" BorderThickness="0" Click="NextBtn_Click">
+                        <Image Source="/UserControls/forward_64.png"></Image>
+                    </Button>
+                </Canvas>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPF_Gallery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Gallery"
+        mc:Ignorable="d"
+        Title="GALLERY" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="MainGrid">
+        <Grid  x:Name="SecondGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Canvas Background="Aquamarine">
+                <Menu Canvas.Top="15" Height="30" Width="80" BorderThickness="0" Background="DeepSkyBlue">
+                    <MenuItem FontSize="15" VerticalContentAlignment="Center"  Width="80" Height="30" Header="File">
+                    </MenuItem>
+                </Menu>
+
+                <Menu Canvas.Left="90" Canvas.Top="15" Height="30" Width="80" BorderThickness="0" Background="SpringGreen">
+                    <MenuItem FontSize="15" VerticalContentAlignment="Center"  Width="80" Height="30" Header="Edit">
+                        <MenuItem Name="AddFile_MenuItem" Header="Add File" Click="Button_Click"></MenuItem>
+                    </MenuItem>
+                </Menu>
+
+                <Menu Canvas.Left="180" Canvas.Top="15" Height="30" Width="80" BorderThickness="0" Background="DeepPink">
+                    <MenuItem FontSize="15" VerticalContentAlignment="Center"  Width="80" Height="30" Header="View" >
+                    </MenuItem>
+                </Menu>
+            </Canvas>
+
+            <ListBox Grid.Row="1" ItemsSource="{Binding Photos}" 
+                     Background="Aquamarine" Name="MainListBox" 
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                     MouseDoubleClick="MainListBox_MouseDoubleClick">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>

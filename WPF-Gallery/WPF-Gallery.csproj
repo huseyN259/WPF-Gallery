@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>WPF_Gallery</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="UserControls\backBtn2_64.png" />
+    <None Remove="UserControls\forward_64.png" />
+    <None Remove="UserControls\Menu.png" />
+    <None Remove="UserControls\prev_64.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UserControls\backBtn2_64.png" />
+    <Resource Include="UserControls\forward_64.png" />
+    <Resource Include="UserControls\Menu.png" />
+    <Resource Include="UserControls\prev_64.png" />
+  </ItemGroup>
+
+</Project>
